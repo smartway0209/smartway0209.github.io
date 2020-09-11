@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from smartwayparking.com/cms/login by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 25 Aug 2020 12:15:44 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta http-equiv="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <title>智行股份有限公司</title>
+
+    <meta name="description" content="User login page" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="shortcut icon" href="../assets/images/common/cms_icon.png">
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="../assets/css/ace_backstage/bootstrap.css" />
+    <link rel="stylesheet" href="../assets/css/ace_backstage/font-awesome.css" />
+
+    <!-- page specific plugin styles -->
+    <link rel="stylesheet" href="../assets/css/ace_backstage/jquery-ui.custom.css" />
+    <link rel="stylesheet" href="../assets/css/ace_backstage/jquery.gritter.css" />
+    <link rel="stylesheet" href="../assets/css/ace_backstage/chosen.css" />
+    <link rel="stylesheet" href="../plugin/fancybox/jquery.fancybox8cbb.css?v=2.1.5" media="screen" />
+
+    <!-- text fonts -->
+    <link rel="stylesheet" href="../assets/css/ace_backstage/ace-fonts.css" />
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="../assets/css/ace_backstage/ace.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+    <!-- 自訂CSS -->
+    <link rel="stylesheet" href="../assets/css/common/cms.css" />
+
+    <!-- ace settings handler -->
+    <script src="../assets/js/ace_backstage/ace-extra.js"></script>
+</head>
+
+<!-- .aside -->
+<div class="modal fade" id="modal-form">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body wrapper-lg">
+                <div class="row">
+                    <h3 class="m-t-none m-b">修改密碼</h3>
+                    <form action="http://smartwayparking.com/cms/password_check" method="POST" id="password_check_form">
+                        <input type="hidden" name="csrf_test_name" class="csrf_test_name" value="dc1b3f5b2b9a65a58ca4dcd89bec0a26" />                        <div class="form-group">
+                            <label>新密碼</label>
+                            <input type="password" name="c_password" id="c_password" class="form-control required" placeholder="新密碼">
+                        </div>
+                        <div class="form-group">
+                            <label>確認密碼</label>
+                            <input type="password" name="c_password_chk" id="c_password_chk" class="form-control" placeholder="確認密碼">
+                        </div>
+                        <div class="checkbox m-t-lg">
+                            <button type="submit" id="check" class="btn btn-info btn-sm pull-right" >
+                                <i class="ace-icon fa fa-check bigger-100"></i>
+                                確認
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><body class="login-layout blur-login">
+	<div class="main-container">
+		<div class="main-content">
+			<div class="row">
+				<div class="col-sm-10 col-sm-offset-1">
+					<div class="login-container">
+						<div class="center">
+							<h1>&nbsp;</h1>
+							<h4>&nbsp;</h4>
+						</div>
+
+						<div class="space-6"></div>
+
+						<div class="position-relative">
+							<div id="login-box" class="login-box visible widget-box no-border">
+								<div class="widget-body">
+									<div class="widget-main">
+										<h4 class="header lighter bigger ace-icon" style="border-bottom: none;">
+											<img src="../assets/uploads/logo/logo_20181112100647713978.png" class="width-50">
+										</h4>
+
+										<form method="POST" action="http://smartwayparking.com/cms/login_check" id="validation-form">
+											<input type="hidden" name="csrf_test_name" class="csrf_test_name" value="dc1b3f5b2b9a65a58ca4dcd89bec0a26" />											<fieldset>
+												<div class="form-group">
+													<label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="text" name="account" id="account" class="form-control" placeholder="帳號"/>
+															<i class="ace-icon fa fa-user"></i>
+														</span>
+													</label>
+												</div>
+
+												<div class="form-group">
+													<label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="password" name="password" id="password" class="form-control" placeholder="密碼" />
+															<i class="ace-icon fa fa-lock"></i>
+														</span>
+													</label>
+												</div>
+
+												
+												<div class="space"></div>
+
+												<div class="clearfix">
+													<button type="submit" id="send" class="width-100 pull-right btn btn-sm btn-primary">
+														<i class="ace-icon fa fa-key"></i>
+														<span class="bigger-100">登入</span>
+													</button>
+												</div>
+											</fieldset>
+										</form>
+									</div><!-- /.widget-main -->
+								</div><!-- /.widget-body -->
+							</div><!-- /.login-box -->
+						</div><!-- /.position-relative -->
+					</div>
+				</div><!-- /.col -->
+			</div><!-- /.row -->
+		</div><!-- /.main-content -->
+	</div><!-- /.main-container -->
+<footer id="footer" class="footer">
+  	<div class="footer-inner dark">
+    	<div class="footer-content">
+      		<small>&copy; 2015 muki . All Rights Reserved. Design by muki.</small>
+    	</div>
+  	</div>
+</footer>
+
+<!-- basic scripts -->
+<script src='../assets/js/ace_backstage/jquery.js'></script>
+<script type="text/javascript">
+	if('ontouchstart' in document.documentElement) document.write("<script src='../assets/js/ace_backstage/jquery.mobile.custom.js'>"+"<"+"/script>");
+</script>
+<!-- page specific plugin scripts -->
+<script src="../assets/js/ace_backstage/bootstrap.js"></script>
+<script src="../assets/js/ace_backstage/fuelux/fuelux.wizard.js"></script>
+<script src="../assets/js/ace_backstage/jquery.validate.js"></script>
+<script src="../assets/js/ace_backstage/additional-methods.js"></script>
+<script src="../assets/js/ace_backstage/bootbox.js"></script>
+<script src="../assets/js/ace_backstage/jquery.maskedinput.js"></script>
+<script src="../assets/js/ace_backstage/select2.js"></script>
+
+<!--[if lte IE 8]>
+  <script src="/assets/js/ace_backstage/excanvas.js"></script>
+<![endif]-->
+<script src="../assets/js/ace_backstage/jquery-ui.custom.js"></script>
+<script src="../assets/js/ace_backstage/jquery.ui.touch-punch.js"></script>
+<script src="../assets/js/ace_backstage/jquery.easypiechart.js"></script>
+<script src="../assets/js/ace_backstage/jquery.sparkline.js"></script>
+<script src="../assets/js/ace_backstage/flot/jquery.flot.js"></script>
+<script src="../assets/js/ace_backstage/flot/jquery.flot.pie.js"></script>
+<script src="../assets/js/ace_backstage/flot/jquery.flot.resize.js"></script>
+<script src="../assets/js/ace_backstage/jquery.gritter.js"></script>
+
+<!-- 日期處理類別庫JS -->
+<script src="../assets/js/ace_backstage/date-time/moment.js"></script>
+<script src="../assets/js/ace_backstage/date-time/moment-zh_tw.js"></script>
+
+<!-- ace scripts -->
+<script src="../assets/js/ace_backstage/ace/elements.scroller.js"></script>
+<script src="../assets/js/ace_backstage/ace/elements.colorpicker.js"></script>
+<script src="../assets/js/ace_backstage/ace/elements.fileinput.js"></script>
+<script src="../assets/js/ace_backstage/ace/elements.typeahead.js"></script>
+<script src="../assets/js/ace_backstage/ace/elements.spinner.js"></script>
+<script src="../assets/js/ace_backstage/ace/elements.treeview.js"></script>
+<script src="../assets/js/ace_backstage/ace/elements.wizard.js"></script>
+<script src="../assets/js/ace_backstage/ace/elements.aside.js"></script>
+<script src="../assets/js/ace_backstage/ace/ace.js"></script>
+<script src="../assets/js/ace_backstage/ace/ace.ajax-content.js"></script>
+<script src="../assets/js/ace_backstage/ace/ace.touch-drag.js"></script>
+<script src="../assets/js/ace_backstage/ace/ace.sidebar.js"></script>
+<script src="../assets/js/ace_backstage/ace/ace.sidebar-scroll-1.js"></script>
+<script src="../assets/js/ace_backstage/ace/ace.submenu-hover.js"></script>
+<script src="../assets/js/ace_backstage/ace/ace.widget-box.js"></script>
+<script src="../assets/js/ace_backstage/ace/ace.widget-on-reload.js"></script>
+
+<!-- cms common scripts -->
+<script type="text/javascript" src="../assets/js/common/cms_common.js"></script>
+<script src="../assets/js/common/jquery.validate.custom.js"></script>
+
+<script>
+	// 處理選單定位
+	var main_menu = "";
+	var sub_menu = "";
+
+	$('#'+main_menu).addClass('active');
+	$('#'+sub_menu).addClass('active');
+</script><script>
+	var system_message = "";
+
+	if(system_message != "") {
+		$.gritter.add({
+			//title: 'This is a warning notification',			//標題
+			text: system_message,								//內容
+			time: '3000',										//顯示時間(毫秒)
+			position: 'bottom-right',							//顯示位置的CSS
+			class_name: 'gritter-error'							//樣式CSS
+		});
+	}
+
+  // 表單驗證
+  	$("#validation-form").validate({
+  		errorElement: 'div',
+		errorClass: 'help-block',
+		focusInvalid: false,
+		ignore: "",
+		rules: {
+			account: {
+				required: true
+			},
+			password: {
+				required: true,
+			},
+			captcha: {
+				required: true,
+				remote:{
+	              	url:"/ajax/ajax_cms/captcha_validate",   //後台處理程序
+	              	type:"post",                			 //數據發送方式
+	              	dataType:"json",              			 //接受數據格式
+	              	data:{                    				 //要傳遞的數據
+	                    captcha:function(){return $("#captcha_code").val();},
+	                    csrf_test_name: function(){return $('.csrf_test_name').val();}
+	              	},
+	              	dataFilter: function(data, type) {
+	              		data = $.parseJSON(data);
+
+	              		$('.csrf_test_name').val(data['csrf_data']['hash']);
+
+	                	if(data['result'] == 1) {
+	                  		return true;
+	                	} else {
+	                  		return false;
+	                	}
+	              	}
+	            }
+			}
+		},
+
+		messages: {
+			captcha: {
+				remote: "驗證碼錯誤"
+			}
+		},
+
+		highlight: function (e) {
+			$(e).closest('.form-group').removeClass('has-info').addClass('has-error');
+		},
+
+		success: function (e) {
+			$(e).closest('.form-group').removeClass('has-error');//.addClass('has-info');
+			$(e).remove();
+		},
+
+		errorPlacement: function (error, element) {
+			if(element.is('input[type=checkbox]') || element.is('input[type=radio]')) {
+				var controls = element.closest('div[class*="col-"]');
+				if(controls.find(':checkbox,:radio').length > 1) controls.append(error);
+				else error.insertAfter(element.nextAll('.lbl:eq(0)').eq(0));
+			}
+			else if(element.is('.select2')) {
+				error.insertAfter(element.siblings('[class*="select2-container"]:eq(0)'));
+			}
+			else if(element.is('.chosen-select')) {
+				error.insertAfter(element.siblings('[class*="chosen-container"]:eq(0)'));
+			}
+			else error.insertAfter(element.parent());
+		},
+		submitHandler: function (form)
+	    {
+          	$('#send').attr('disabled', 'disabled');
+          	form.submit();
+	    }
+  	});
+</script>
+</body>
+
+<!-- Mirrored from smartwayparking.com/cms/login by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 25 Aug 2020 12:16:12 GMT -->
+</html>
